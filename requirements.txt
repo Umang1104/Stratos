@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pymongo
+requests
+python-dotenv
+pytest
+httpx
+pandas
+numpy
+scipy
+paho-mqtt>=2.0.0
+websocket-client>=1.7.0
+websockets>=11.0

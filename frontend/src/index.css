@@ -1,0 +1,201 @@
+:root {
+  /* Core Colors */
+  --bg-dark: #090a0c;
+  --bg-panel: #111316;
+  --bg-panel-hover: #1a1d21;
+  
+  /* Text */
+  --text-main: #e2e8f0;
+  --text-muted: #8b95a5;
+  --text-bright: #ffffff;
+  
+  /* Status Colors */
+  --accent-cyan: #00e5ff;
+  --accent-blue: #0284c7;
+  --accent-amber: #f59e0b;
+  --accent-red: #ef4444;
+  --accent-green: #10b981;
+  
+  /* UI Elements */
+  --border-color: #262a33;
+  --border-subtle: #1e2128;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', 'Roboto', ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.4;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--text-bright);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.mono-num {
+  font-variant-numeric: tabular-nums;
+  font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Links */
+a {
+  color: var(--text-muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: color 0.15s ease;
+  padding: 4px 0;
+}
+
+a:hover {
+  color: var(--text-main);
+}
+
+a.active-link {
+  color: var(--accent-cyan);
+  border-bottom: 2px solid var(--accent-cyan);
+}
+
+/* Panels */
+.panel {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 2px;
+}
+
+.panel-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Grid Layouts */
+.console-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 8px;
+  height: calc(100vh - 40px);
+  padding: 8px;
+}
+
+.col-left, .col-center, .col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.data-row:last-child {
+  border-bottom: none;
+}
+.data-row:hover {
+  background-color: var(--bg-panel-hover);
+}
+
+.data-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.data-value {
+  color: var(--text-bright);
+  font-weight: 500;
+}
+
+/* Buttons */
+button, .btn {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--bg-panel-hover);
+  border-color: var(--text-muted);
+}
+
+button.primary, .btn.primary {
+  background-color: var(--border-color);
+  color: var(--text-bright);
+  border-color: var(--border-color);
+}
+button.primary:hover, .btn.primary:hover {
+  background-color: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+.status-badge.healthy {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+  background: rgba(16, 185, 129, 0.1);
+}
+.status-badge.warning {
+  color: var(--accent-amber);
+  border-color: var(--accent-amber);
+  background: rgba(245, 158, 11, 0.1);
+}
+.status-badge.fault {
+  color: var(--accent-red);
+  border-color: var(--accent-red);
+  background: rgba(239, 68, 68, 0.1);
+}
+.status-badge.active {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  background: rgba(0, 229, 255, 0.1);
+}
+.status-badge.inactive {
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  background: transparent;
+}
